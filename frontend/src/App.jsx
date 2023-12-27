@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // pages
 import Home from './pages/Home'
-import MyDecks from './pages/MyDecks'
-import DeckCards from './pages/DeckCards'
+import MyCollections from './pages/MyCollections'
+import CollectionCards from './pages/CollectionCards'
 
 // components
 import Navbar from './components/Navbar'
@@ -23,12 +23,12 @@ export default function App() {
               element={<Home />}
             />
             <Route 
-              path="/decks"
-              element={<MyDecks />}
+              path="/collections"
+              element={<MyCollections />}
             />
             <Route
-              path="/decks/:deckId"
-              element={<DeckCards />}
+              path="/collections/:collectionId"
+              element={<CollectionCards />}
             />
           </Routes>
         </div>

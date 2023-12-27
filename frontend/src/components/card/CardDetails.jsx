@@ -3,25 +3,32 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 export default function CardDetails() {
-    const [decks, setDecks] = useState([])
-    const { deckId } = useParams()
+    const [collections, setCollections] = useState([])
+    const { collectionId } = useParams()
 
     useEffect(() => {
-        const fetchDecks = async () => {
-            const res = await axios.get(`/api/decks/${deckId}`)
-            setDecks(res.data)
+        const fetchCollections = async () => {
+            const res = await axios.get(`/api/collections/${collectionId}`)
+            setCollections(res.data)
         }
 
-        fetchDecks()
-    }, [deckId])
+        fetchCollections()
+    }, [collectionId])
 
+    const handleDelete = async (cardId) => {
+        await fetch(`/api/collections/${collectionId}/${cardId}`, {
+            method: 'DELETE'
+        })
+    }
+    
     return (
         <>
-            {decks.cards && decks.cards.length > 0 ? (
-                decks.cards.map((card) => (
+            {collections.cards && collections.cards.length > 0 ? (
+                collections.cards.map((card) => (
                     <div key={card._id}>
                         <p>Title: {card.title}</p>
                         <p>Quantity: {card.quantity}</p>
+                        <button onClick={() => handleDelete(card._id)}>delete</button>
                     </div>
                 ))
                 ) : ( 

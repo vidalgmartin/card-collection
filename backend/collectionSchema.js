@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
 // define the card model
-const deckSchema = new mongoose.Schema({
+const collectionSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
     },
-    format: {
+    description: {
         type: String,
         required: true
     },
@@ -14,4 +14,4 @@ const deckSchema = new mongoose.Schema({
 }, {timestamps: true })
 
 // define and export the card model for the database
-module.exports = mongoose.model('Deck', deckSchema)
+module.exports = mongoose.model('Collection', collectionSchema)

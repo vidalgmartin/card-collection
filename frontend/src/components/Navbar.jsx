@@ -11,8 +11,8 @@ export default function Navbar() {
                 <Link to="/">
                     <h2>Home</h2>
                 </Link>
-                <Link to="/decks">
-                    <h2>My Decks</h2>
+                <Link to="/collections">
+                    <h2>My Collections</h2>
                 </Link>
             </div>
         </header>

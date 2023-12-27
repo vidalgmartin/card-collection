@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
-export default function DeckForm({ onSubmit }) {
+export default function CollectionForm({ onSubmit }) {
     const [ title, setTitle ] = useState('')
-    const [ format, setFormat ] = useState('')
+    const [ description, setDescription ] = useState('')
     const [ error, setError ] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         
-        const deck = { title, format }
+        const collection = { title, description }
 
-        const response = await fetch('/api/decks', {
+        const response = await fetch('/api/collections', {
             method: 'POST',
-            body: JSON.stringify(deck),
+            body: JSON.stringify(collection),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -25,28 +25,28 @@ export default function DeckForm({ onSubmit }) {
         }
         if (response.ok) {
             setTitle('')
-            setFormat('')
+            setDescription('')
             setError(null)
-            console.log('New deck', json)
+            console.log('New Collection', json)
         }
     }
 
-     return (
+    return (
         <div className="parent-container">
             <form className="form-container" onSubmit={handleSubmit}>
 
-                <label>Deck Name:</label>
+                <label>Collection Name:</label>
                 <input 
                     type="text"
                     onChange={(e) => setTitle(e.target.value)}
                     value={title}
                 />
                 
-                <label>Format:</label>
+                <label>Description:</label>
                 <input 
                     type="text"
-                    onChange={(e) => setFormat(e.target.value)}
-                    value={format}
+                    onChange={(e) => setDescription(e.target.value)}
+                    value={description}
                 />
                 <button>Submit</button>
                 {error && <div className="error">{error}</div>}
