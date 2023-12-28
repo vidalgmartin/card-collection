@@ -4,9 +4,13 @@ import CollectionDetails from '../components/collection/CollectionDetails'
 export default function MyCollections() {
 
     return (
-        <>
-            <CollectionForm />
-            <CollectionDetails />
-        </>
+        <div className="my-collections-page">
+            <div className="parent-form-container">
+                <CollectionForm />
+            </div>
+            <div className="parent-collection-container">
+                <CollectionDetails />
+            </div>
+        </div>
     )
 }

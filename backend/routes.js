@@ -88,11 +88,12 @@ router.delete('/collections/:id', async (req, res) => {
 
     try {
         const deleteCollection = await Collection.findByIdAndDelete(id)
-        res.json(deleteCollection)
 
         if (!deleteCollection) {
             return res.status(404).json({ message: 'No such collection exists' })
         }
+        
+        res.json(deleteCollection)
     } catch (error) {
         console.log(error)
         res.status(400).json({ message: 'Internal Server Error' })

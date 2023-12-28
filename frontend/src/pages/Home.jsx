@@ -1,7 +1,7 @@
 export default function Home() {
     
     return (
-        <div className="home-container">
+        <div className="home-page">
             <div>
                 Some 3D model thing
             </div>

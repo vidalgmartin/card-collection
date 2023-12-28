@@ -32,25 +32,23 @@ export default function CollectionForm({ onSubmit }) {
     }
 
     return (
-        <div className="parent-container">
-            <form className="form-container" onSubmit={handleSubmit}>
+        <form className="form-container" onSubmit={handleSubmit}>
 
-                <label>Collection Name:</label>
-                <input 
-                    type="text"
-                    onChange={(e) => setTitle(e.target.value)}
-                    value={title}
-                />
-                
-                <label>Description:</label>
-                <input 
-                    type="text"
-                    onChange={(e) => setDescription(e.target.value)}
-                    value={description}
-                />
-                <button>Submit</button>
-                {error && <div className="error">{error}</div>}
-            </form>
-        </div>
+            <label>Collection Name:</label>
+            <input 
+                type="text"
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+            />
+            
+            <label>Description:</label>
+            <input 
+                type="text"
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
+            />
+            <button>Submit</button>
+            {error && <div className="error">{error}</div>}
+        </form>
      )
 }
