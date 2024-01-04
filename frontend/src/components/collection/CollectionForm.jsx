@@ -36,6 +36,7 @@ export default function CollectionForm({ onSubmit }) {
 
             <label>Collection Name:</label>
             <input 
+                className="name-input"
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
@@ -43,10 +44,12 @@ export default function CollectionForm({ onSubmit }) {
             
             <label>Description:</label>
             <input 
+                className="description-input"
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
             />
+
             <button>Submit</button>
             {error && <div className="error">{error}</div>}
         </form>

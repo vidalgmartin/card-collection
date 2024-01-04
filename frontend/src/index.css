@@ -41,7 +41,11 @@ body {
     color: white;
 }
 
-/* pages */
+/*
+ * 
+ * pages
+ *
+ */
 .home-page {
     display: flex;
     justify-content: space-evenly;
@@ -56,35 +60,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    width: 100vw;
-
+    
     border: 3px solid lime;
 }
 
 .parent-form-container {
-    display: grid;
-    place-items: center;
-    width: 20%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 20px;
+    position: static;
+    width: 400px;
+    min-width: 400px;
+    height: 250px;
+    margin: 20px;
+
     
-    border: 3px solid lime;
 }
 
 .parent-collection-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
+    width: 1000px;
+    min-width: 600px;
+    height: 600px;
+    margin: 20px 0 20px 0;
     overflow-y: scroll;
-    width: 60%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 40px;
-    
-    border: 3px solid lime;
 }
 
 /* forms */
@@ -92,12 +87,49 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: left;
     width: 100%;
-    height: 60%;
-    border: 1px solid;
-    border-radius: 8px;
-    background-color: white;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+.form-container label {
+    color: rgb(248, 248, 231);
+    font-size: 1em;
+}
+
+.form-container .name-input {
+    width: 80%;
+    height: 10%;
+    border-style: none;
+    border-radius: 2px;
+    outline: none;
+    background-color: rgb(248, 248, 231);
+}
+
+.form-container .description-input {
+    width: 80%;
+    height: 20%;
+    border-style: none;
+    border-radius: 2px;
+    outline: none;
+    background-color: rgb(248, 248, 231);
+}
+
+.form-container button {
+    width: 40%;
+    height: 12%;
+    border-style: none;
+    border-radius: 2px;
+    background-color: rgb(210, 62, 62);
+    color: rgb(248, 248, 231);
+    box-shadow: 0 2px 2px rgb(54, 10, 10);
+    
+}
+
+.form-container button:hover {
+    background-color: rgb(160, 47, 47);
 }
 
 /* collection */
@@ -106,31 +138,34 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    min-height: 150px;
-    margin-bottom: 10px;
-    background-color: rgb(46, 41, 41);
-    border: 1px solid rgb(95, 94, 94);
+    height: 20%;
+    margin-bottom: 15px;
+    
+    background-color: rgb(248, 248, 231);
 }
 
-.collection-item * {
-    color: white;
-    
-    
-}
-
-.collection-name {
-    display: grid;
-    place-items: center;
+.item-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     width: 200px;
-    height: 150px;
-    border-radius: 4px;
-    background-color: orange;
+    height: 120px;
+
+    border-right: 1px solid red;
+}
+
+.item-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+    height: 120px;
+
+    border: 1px solid red;
 }
 
 .collection-item button {
-    width: 100px;
-    height: 50px;
-    background-color: rgb(86, 81, 81);
     
-    border-radius: 4px;
 }

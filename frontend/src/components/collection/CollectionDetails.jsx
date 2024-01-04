@@ -26,9 +26,15 @@ export default function CollectionDetails() {
             {collections && collections.map((collection) => (
                 <div className="collection-item" key={collection._id}>
                     <Link to={`/collections/${collection._id}`}>
-                        <p className="collection-name">Name: {collection.title}</p>
+                        <div className="item-name">
+                            <h4>Collection:</h4>
+                            <p>{collection.title}</p>
+                        </div>
                     </Link>
-                    <p>Description: {collection.description}</p>
+                    <div className="item-description">
+                        <h4>Description:</h4>
+                        <p>{collection.description}</p>
+                    </div>
                     <p>Created On: {formatDistanceToNow(new Date(collection.createdAt), { addSuffix: true })}</p>
                     <button onClick={() => handleDelete(collection._id)}>delete</button>
                 </div>
