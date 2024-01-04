@@ -152,7 +152,7 @@ body {
     width: 200px;
     height: 120px;
 
-    border-right: 1px solid red;
+    border-right: 2px solid red;
 }
 
 .item-description {
