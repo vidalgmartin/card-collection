@@ -33,7 +33,7 @@ export default function CardDetails() {
                 ))
                 ) : ( 
                     <p>No cards in the deck.</p> 
-                )}
+            )}
         </>
     )
 }
